@@ -1,24 +1,28 @@
 const path = require('path');
 
-const reactParentComponentPath = path.join(__dirname, '/client/src/js/components/container/App.jsx');
-const includePath = path.join(__dirname, '/client/src/js/components/');
+var SRC_DIR = path.join(__dirname, '/client/src');
+var DIST_DIR = path.join(__dirname, '/client/dist');
+
+console.log('src'+ SRC_DIR);
+console.log('dist'+ DIST_DIR);
 
 module.exports = {
-  entry: ['@babel/polyfill', reactParentComponentPath],
+  entry: `./client/src/index.jsx`,
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'dist')
+    path: DIST_DIR
   },
   module: {
     rules: [
       {
         test: /\.jsx$/,
         exclude: /node_modules/,
-        include: includePath,
-        use: {
-          loader: "babel-loader"
-        }
+        include: SRC_DIR,
+        loader: "babel-loader",
+        options: {
+          presets: ["@babel/preset-env", "@babel/preset-react"]
+        },
       },
-    ]
+    ],
   }
 };

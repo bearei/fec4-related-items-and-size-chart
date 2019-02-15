@@ -9,7 +9,9 @@
   },
   "scripts": {
     "start": "nodemon server/index.js",
-    "build": "webpack --mode production"
+    "build": "webpack -d --watch",
+    "db:setup": "node database-mongodb/seed.js"
+
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -21,7 +23,10 @@
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
+    "eslint": "^5.14.0",
+    "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "eslint-plugin-import": "^2.16.0",
     "faker": "^4.1.0",
     "prop-types": "^15.6.2",
     "react": "^16.8.1",

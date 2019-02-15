@@ -1,7 +1,7 @@
 const express = require('express');
 const db = require('../database-mongodb/index.js');
 const Product = require('../database-mongodb/Product.js');
-
+const path = require('path');
 const app = express();
 const PORT = 3002;
 

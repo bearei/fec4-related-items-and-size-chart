@@ -6,7 +6,7 @@ const app = express();
 const PORT = 3002;
 
 
-app.use(express.static(__dirname + '/../client/dist'));
+app.use(express.static(path.join(__dirname, '/../client/dist')));
 
 app.get('/api/product:id/sizechart', function(req, res) {
   db.fetchFromDB()

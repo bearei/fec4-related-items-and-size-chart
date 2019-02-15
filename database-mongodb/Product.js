@@ -3,12 +3,12 @@ const db = require('./index.js');
 mongoose.Promise = global.Promise;
 
 const productSchema = new mongoose.Schema({
-  _id: Number,
   bodyPart: String,
   size: String,
-  measurements: Number
+  measurement: Number
 });
 
 const Product = mongoose.model('Product', productSchema);
 
 module.exports = Product;
+// module.exports.create = create;

@@ -10,13 +10,13 @@
   "scripts": {
     "start": "nodemon server/index.js",
     "build": "webpack -d --watch",
-    "db:setup": "node database-mongodb/seed.js"
-
+    "db:setup": "node database-mongodb/seed.js",
+    "test": "jest"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "mongoose": "^5.4.10",
-    "mongoose-auto-increment": "^5.0.1"
+    "faker": "^4.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -27,7 +27,7 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "eslint-plugin-import": "^2.16.0",
-    "faker": "^4.1.0",
+    "jest": "^24.1.0",
     "prop-types": "^15.6.2",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",

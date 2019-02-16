@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const db = require('./index.js');
+import mongoose from 'mongoose';
+
 mongoose.Promise = global.Promise;
 
 const pavSchema = new mongoose.Schema({
@@ -7,7 +7,7 @@ const pavSchema = new mongoose.Schema({
   star_rating: Number,
   review_count: Number,
   short_description: String,
-  price: Number
+  price: Number,
 });
 
 const Pav = mongoose.model('Pav', pavSchema);

@@ -1,7 +1,6 @@
 const express = require('express');
-const db = require('../database-mongodb/index.js');
-const Product = require('../database-mongodb/Product.js');
 const path = require('path');
+const db = require('../database-mongodb/index.js');
 
 const app = express();
 const PORT = 3002;
@@ -9,9 +8,14 @@ const PORT = 3002;
 
 app.use(express.static(path.join(__dirname, '/../client/dist')));
 
-app.get('/api/product:id/sizechart', (req, res) => {
-  db.fetchFromDB()
-    .then((product) => res.send(product));
+app.get('/api/sizechart', (req, res) => {
+  db.fetchChartFromDB()
+    .then(chart => res.send(chart));
+});
+
+app.get('/api/pavs', (req, res) => {
+  db.fetchFourRandomPAVsFromDB()
+    .then(pavs => res.send(pavs));
 });
 
 app.listen(PORT, () => {

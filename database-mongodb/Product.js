@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise;
 const productSchema = new mongoose.Schema({
   bodyPart: String,
   size: String,
-  measurement: Number
+  measurement: Number,
 });
 
 const Product = mongoose.model('Product', productSchema);

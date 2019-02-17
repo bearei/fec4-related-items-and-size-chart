@@ -1,22 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import axios from 'axios';
+import React from "react";
+import ReactDOM from "react-dom";
+import axios from "axios";
 
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {
-
-    }
+    this.state = {};
   }
-
 
   render() {
-    return (
-      <div>donna</div>
-    );
+    return <div>donna</div>;
   }
-
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById("app"));

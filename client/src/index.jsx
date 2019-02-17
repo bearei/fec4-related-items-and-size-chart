@@ -7,27 +7,33 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      chart: []
+      chart: [{ bodyPart: "" }]
     };
+    this.getSizeChart = this.getSizeChart.bind(this);
   }
 
   getSizeChart() {
     axios
       .get("/api/sizechart")
       .then(response => {
-        this.setState({ chart: response.data });
+        console.log(response.data);
+        return this.setState({ chart: response.data });
+        console.log(this.state.chart);
       })
       .catch(err => console.log(err));
   }
 
   componentDidMount() {
+    // const self = this;
+    // self.getSizeChart(data => self.setState({ chart: data }));
     this.getSizeChart();
   }
+
   render() {
     return (
       <div>
         <div className="chart">
-          <SizeChart sizes={this.state.chart} />
+          <SizeChart chart={this.state.chart} />
         </div>
       </div>
     );

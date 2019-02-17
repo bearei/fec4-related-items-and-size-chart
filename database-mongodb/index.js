@@ -9,7 +9,7 @@ const db = mongoose.connect(mongoUri, {
 });
 
 const fetchChartFromDB = () => {
-  const query = Product.find({}).limit(24);
+  const query = Product.find({});
   return query;
 };
 

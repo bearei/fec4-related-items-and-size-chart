@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 const faker = require('faker');
 const Product = require('./Product.js');
@@ -6,10 +6,10 @@ const Pav = require('./Pav.js');
 
 function generateProductChart() {
   const bodyParts = ['Chest', 'Sleeve Length', 'Waist', 'Inseam'];
-  const sizes = ['XXS', 'XS', 'S', 'M', 'L', 'XL'];
+  const sizes = ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL'];
 
   let aProd = {};
-  let chart = [];
+  const chart = [];
 
   bodyParts.forEach((elementP) => {
     sizes.forEach((elementS) => {
@@ -17,7 +17,7 @@ function generateProductChart() {
       aProd.size = elementS;
       aProd.measurement = faker.random.number({
         min: 26,
-        max: 48,
+        max: 52,
       });
       chart.push(aProd);
       aProd = {};
@@ -57,7 +57,7 @@ function PAVFactory() {
 
 const pavArray = [];
 
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 100; i += 1) {
   pavArray.push(PAVFactory());
 }
 

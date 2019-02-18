@@ -22,3 +22,5 @@ app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
   console.log(path.join(__dirname, '/../client/dist'));
 });
+
+module.exports = app;

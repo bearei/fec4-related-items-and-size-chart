@@ -7,6 +7,6 @@ import SizeChart from '../../client/src/components/SizeChart';
 describe('<SizeChart />', () => {
   test('Should exist', () => {
     const wrapper = shallow( < SizeChart / > );
-    expect(wrapper.exists('table')).toBe(true);
+    expect(wrapper.exists('td')).toBe(true);
   });
 });

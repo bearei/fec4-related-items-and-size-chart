@@ -26,27 +26,35 @@ const SizeChart = ({ chart }) => (
       <tbody>
         <tr>
           <td>Chest</td>
-          {chart.slice(0, 7).map(x => (
-            <td>{x.measurement}</td>
-          ))}
+          {chart
+            .filter(word => word.bodyPart === "Chest")
+            .map(x => (
+              <td>{x.measurement}</td>
+            ))}
         </tr>
         <tr>
           <td>Sleeve Length</td>
-          {chart.slice(8, 15).map(x => (
-            <td>{x.measurement}</td>
-          ))}
+          {chart
+            .filter(word => word.bodyPart === "Sleeve Length")
+            .map(x => (
+              <td>{x.measurement}</td>
+            ))}
         </tr>
         <tr>
           <td>Waist</td>
-          {chart.slice(16, 23).map(x => (
-            <td>{x.measurement}</td>
-          ))}
+          {chart
+            .filter(word => word.bodyPart === "Waist")
+            .map(x => (
+              <td>{x.measurement}</td>
+            ))}
         </tr>
         <tr>
           <td>Inseam</td>
-          {chart.slice(24, 28).map(x => (
-            <td>{x.measurement}</td>
-          ))}
+          {chart
+            .filter(word => word.bodyPart === "Inseam")
+            .map(x => (
+              <td>{x.measurement}</td>
+            ))}
         </tr>
       </tbody>
     </table>

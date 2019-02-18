@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
-
+const db = require('./index.js');
 const faker = require('faker');
 const Product = require('./Product.js');
 const Pav = require('./Pav.js');
+
 
 function generateProductChart() {
   const bodyParts = ['Chest', 'Sleeve Length', 'Waist', 'Inseam'];
@@ -23,7 +24,6 @@ function generateProductChart() {
       aProd = {};
     });
   });
-
   return chart;
 }
 
@@ -36,6 +36,7 @@ const insertProductChart = () => {
 
 insertProductChart();
 
+/** ****************PeopleAlsoViewed************************ */
 
 function PAVFactory() {
   const pav = {};
@@ -43,21 +44,20 @@ function PAVFactory() {
   pav.link_to_image = faker.image.fashion();
   pav.star_rating = faker.random.number({
     min: 0,
-    max: 5,
+    max: 5
   });
   pav.review_count = faker.random.number({
     min: 0,
-    max: 100,
+    max: 100
   });
   pav.short_description = faker.commerce.productName();
   pav.price = faker.commerce.price();
 
   return pav;
 }
-
 const pavArray = [];
 
-for (let i = 0; i < 100; i += 1) {
+for (let i = 0; i < 100; i++) {
   pavArray.push(PAVFactory());
 }
 
@@ -68,5 +68,5 @@ const insertPavs = () => {
 
 insertPavs();
 
-module.exports.insertProductChart = insertProductChart;
-module.exports.inserPavs = insertPavs;
+module.exports.insertProducts;
+module.exports.inserPavs;

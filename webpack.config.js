@@ -1,13 +1,11 @@
 const path = require('path');
 
-let SRC_DIR = path.join(__dirname, '/client/src');
-let DIST_DIR = path.join(__dirname, '/client/dist');
-
-console.log('src' + SRC_DIR);
-console.log('dist' + DIST_DIR);
+const SRC_DIR = path.join(__dirname, '/client/src');
+const DIST_DIR = path.join(__dirname, '/client/dist');
 
 module.exports = {
-  entry: `./client/src/index.jsx`,
+  entry: './client/src/index.jsx'
+  d,
   output: {
     filename: 'main.js',
     path: DIST_DIR

@@ -4,9 +4,12 @@ import React from "react";
 // const propTypes = {};
 
 // const defaultProps = {};
-
-const SizeChart = props => (
+const print = value => {
+  console.log(value);
+};
+const SizeChart = ({ chart }) => (
   <div>
+    {/* {print(chart)} */}
     <table>
       <thead>
         <tr>
@@ -22,16 +25,28 @@ const SizeChart = props => (
       </thead>
       <tbody>
         <tr>
-          <td>{props.chart[0].bodyPart}</td>
+          <td>Chest</td>
+          {chart.slice(0, 7).map(x => (
+            <td>{x.measurement}</td>
+          ))}
         </tr>
         <tr>
           <td>Sleeve Length</td>
+          {chart.slice(8, 15).map(x => (
+            <td>{x.measurement}</td>
+          ))}
         </tr>
         <tr>
           <td>Waist</td>
+          {chart.slice(16, 23).map(x => (
+            <td>{x.measurement}</td>
+          ))}
         </tr>
         <tr>
           <td>Inseam</td>
+          {chart.slice(24, 28).map(x => (
+            <td>{x.measurement}</td>
+          ))}
         </tr>
       </tbody>
     </table>

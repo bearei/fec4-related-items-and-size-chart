@@ -7,7 +7,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      chart: [{ bodyPart: "" }]
+      chart: [{ bodyPart: "" }, { size: "" }, { measurement: "" }]
     };
     this.getSizeChart = this.getSizeChart.bind(this);
   }
@@ -16,9 +16,8 @@ class App extends React.Component {
     axios
       .get("/api/sizechart")
       .then(response => {
-        console.log(response.data);
-        return this.setState({ chart: response.data });
-        console.log(this.state.chart);
+        // console.log(response.data);
+        this.setState({ chart: response.data });
       })
       .catch(err => console.log(err));
   }

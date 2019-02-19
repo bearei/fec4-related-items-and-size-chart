@@ -41,7 +41,7 @@ insertProductChart();
 function PAVFactory() {
   const pav = {};
 
-  pav.link_to_image = faker.image.fashion();
+  pav.link_to_image = faker.image.imageUrl(140, 140, "fashion");
   pav.star_rating = faker.random.number({
     min: 0,
     max: 5

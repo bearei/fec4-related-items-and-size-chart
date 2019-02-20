@@ -2,8 +2,8 @@ import React from "react";
 
 const SizeChart = ({ chart }) => (
   <React.Fragment>
-    <div className="sizechart">Size Chart</div>
-    <div>
+    <div className="sizechart-container">
+      <div className="sizechart-title">Size Chart</div>
       <table className="sizechart">
         <thead>
           <tr>

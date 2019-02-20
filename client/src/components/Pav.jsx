@@ -2,18 +2,33 @@ import React from "react";
 
 const Pav = ({ info }) => (
   <div className="pav-container">
-    {info.map((y, key) => (
+    {info.map(y => (
       <React.Fragment>
         <div className="pav-unit">
           <div>
-            <img src={y.link_to_image} key={key} />
+            <img src={y.link_to_image} key={y._id} />
           </div>
           <div>
-            <div>{y.star_rating}</div>
-            <div>{y.review_count}</div>
+            <div className="ratings">
+              <div className="star-ratings-sprite">
+                <span
+                  style={{ width: `${y.star_rating}%` }}
+                  className="star-ratings-sprite-rating"
+                >
+                  _
+                </span>
+              </div>
+              <div className="review-count" key={y._id}>
+                ({y.review_count})
+              </div>
+            </div>
           </div>
-          <div>{y.short_description}</div>
-          <div>${y.price}.00</div>
+          <div className="short-description" key={y._id}>
+            {y.short_description}
+          </div>
+          <div className="price" key={y._id}>
+            ${y.price}.00
+          </div>
         </div>
       </React.Fragment>
     ))}

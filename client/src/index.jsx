@@ -10,6 +10,7 @@ class App extends React.Component {
     this.state = {
       chart: [{ bodyPart: "" }, { size: "" }, { measurement: "" }],
       info: [
+        { _id: 0 },
         { link_to_image: "" },
         { star_rating: 0 },
         { review_count: 0 },

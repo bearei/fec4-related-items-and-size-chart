@@ -36,19 +36,19 @@ const insertProductChart = () => {
 
 insertProductChart();
 
-/** ****************PeopleAlsoViewed************************ */
+/* ****************PeopleAlsoViewed************************ */
 
 function PAVFactory() {
   const pav = {};
 
-  pav.link_to_image = faker.image.imageUrl(140, 140, "fashion");
+  pav.link_to_image = faker.image.imageUrl(140, 140, 'fashion');
   pav.star_rating = faker.random.number({
     min: 0,
-    max: 5
+    max: 100,
   });
   pav.review_count = faker.random.number({
-    min: 0,
-    max: 100
+    min: 1,
+    max: 100,
   });
   pav.short_description = faker.commerce.productName();
   pav.price = faker.commerce.price();
@@ -68,5 +68,5 @@ const insertPavs = () => {
 
 insertPavs();
 
-module.exports.insertProducts;
-module.exports.inserPavs;
+module.exports.insertProductChart = insertProductChart;
+module.exports.insertPavs = insertPavs;

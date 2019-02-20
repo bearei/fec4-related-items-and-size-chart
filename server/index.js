@@ -6,7 +6,7 @@ const app = express();
 const PORT = 3002;
 
 
-app.use(express.static(path.join(__dirname, '/../client/dist')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 app.get('/api/sizechart', (req, res) => {
   db.fetchChartFromDB()
@@ -20,7 +20,7 @@ app.get('/api/pavs', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
-  console.log(path.join(__dirname, '/../client/dist'));
+  console.log(path.join(__dirname, '../public'));
 });
 
 module.exports = app;

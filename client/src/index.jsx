@@ -4,7 +4,7 @@ import axios from "axios";
 import SizeChart from "./components/SizeChart.jsx";
 import Pav from "./components/Pav.jsx";
 
-class App extends React.Component {
+class Ac extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -59,4 +59,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(<Ac />, document.getElementById("ac"));

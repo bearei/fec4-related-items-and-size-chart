@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongoUri = 'mongodb://localhost/products';
+const mongoUri = 'mongodb://localhost/hrei-related-items-and-size-chart';
 const Product = require('./Product.js');
 const Pav = require('./Pav.js');
 

@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css?family=Domine:400,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+
+
+.sizechart-container {
+  display: flex;
+  flex-flow: column;
+  width: 1140px;
+}
+
+.sizechart-title {
+  font-family: "Domine", Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 1140px;
+}
+
+th {
+  font-family: "Roboto", Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.faux-block td {
+  border-right: 4px solid #ccc;
+  width: 140px;
+  font-family: "Roboto", Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.sizechart td {
+  font-family: "Roboto", Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+}
+
+
+.sizechart td,
+.sizechart th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.sizechart tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+
+/**************** PAVs ******************/
+.pav-container {
+  display: flex;
+  flex: row;
+  align-content: space-between;
+  /* justify-content: center; */
+  width: 1140px;
+}
+
+.pav-unit {
+  margin: 0px 80px 80px 80px;
+}
+
+.ratings {
+  display: flex;
+  flex: row;
+}
+
+.review-count {
+  font-family: "Roboto", Helvetica, sans-serif;
+  font-size: 10px;
+}
+
+.short-description,
+.price {
+  font-family: "Roboto", Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.star-ratings-sprite {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
+  font-size: 0;
+  height: 21px;
+  line-height: 0;
+  overflow: hidden;
+  text-indent: -999em;
+  width: 110px;
+  margin: 0 auto;
+}
+
+.star-ratings-sprite-rating {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
+  background-position: 0 100%;
+  float: left;
+  height: 21px;
+  display: block;
+}

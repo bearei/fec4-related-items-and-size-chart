@@ -11,12 +11,10 @@ const Pav = ({ info }) => (
           <div>
             <div className="ratings">
               <div className="star-ratings-sprite">
-                <span
+                <div
                   style={{ width: `${y.star_rating}%` }}
                   className="star-ratings-sprite-rating"
-                >
-                  _
-                </span>
+                />
               </div>
               <div className="review-count" key={y._id}>
                 ({y.review_count})

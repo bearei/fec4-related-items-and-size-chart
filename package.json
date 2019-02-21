@@ -30,7 +30,6 @@
     "enzyme-adapter-react-16": "^1.9.1",
     "eslint": "^5.14.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "eslint-plugin-import": "^2.16.0",
     "jest": "^24.1.0",
     "prop-types": "^15.6.2",

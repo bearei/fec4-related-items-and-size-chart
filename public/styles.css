@@ -9,7 +9,9 @@
 }
 
 #ac .sizechart-title {
+  margin: 10px;
   font-family: "Domine", Roboto, Helvetica, sans-serif;
+  font-weight: 700;
   font-size: 14px;
 }
 
@@ -52,12 +54,26 @@
 
 
 /**************** PAVs ******************/
+
+#ac .pav-title {
+  min-width: 1080px;
+  max-height: 10px;
+  margin: 20px;
+  font-family: "Domine", Roboto, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+}
+
 #ac .pav-container {
   display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  width: 1080px;
+}
+
+#ac .pav-units {
+  display: flex;
   flex: row;
-  align-content: space-between;
-  /* justify-content: center; */
-  width: 1140px;
 }
 
 #ac .pav-unit {

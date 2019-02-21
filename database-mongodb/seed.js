@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const db = require('./index.js');
 const faker = require('faker');
+const db = require('./index.js');
 const Product = require('./Product.js');
 const Pav = require('./Pav.js');
 

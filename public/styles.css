@@ -2,29 +2,29 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
 
 
-.sizechart-container {
+#ac .sizechart-container {
   display: flex;
   flex-flow: column;
   width: 1140px;
 }
 
-.sizechart-title {
+#ac .sizechart-title {
   font-family: "Domine", Roboto, Helvetica, sans-serif;
   font-size: 14px;
 }
 
-table {
+#ac table {
   border-collapse: collapse;
   width: 1140px;
 }
 
-th {
+#ac th {
   font-family: "Roboto", Helvetica, sans-serif;
   font-weight: 700;
   font-size: 12px;
 }
 
-.faux-block td {
+#ac .faux-block td {
   border-right: 4px solid #ccc;
   width: 140px;
   font-family: "Roboto", Helvetica, sans-serif;
@@ -32,27 +32,27 @@ th {
   font-size: 12px;
 }
 
-.sizechart td {
+#ac .sizechart td {
   font-family: "Roboto", Helvetica, sans-serif;
   font-weight: 400;
   font-size: 10px;
 }
 
 
-.sizechart td,
-.sizechart th {
+#ac .sizechart td,
+#ac .sizechart th {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
 }
 
-.sizechart tr:nth-child(even) {
+#ac .sizechart tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
 
 /**************** PAVs ******************/
-.pav-container {
+#ac .pav-container {
   display: flex;
   flex: row;
   align-content: space-between;
@@ -60,27 +60,27 @@ th {
   width: 1140px;
 }
 
-.pav-unit {
+#ac .pav-unit {
   margin: 0px 80px 80px 80px;
 }
 
-.ratings {
+#ac .ratings {
   display: flex;
   flex: row;
 }
 
-.review-count {
+#ac .review-count {
   font-family: "Roboto", Helvetica, sans-serif;
   font-size: 10px;
 }
 
-.short-description,
-.price {
+#ac .short-description,
+#ac .price {
   font-family: "Roboto", Helvetica, sans-serif;
   font-size: 14px;
 }
 
-.star-ratings-sprite {
+#ac .star-ratings-sprite {
   background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
   font-size: 0;
   height: 21px;
@@ -91,7 +91,7 @@ th {
   margin: 0 auto;
 }
 
-.star-ratings-sprite-rating {
+#ac .star-ratings-sprite-rating {
   background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
   background-position: 0 100%;
   float: left;

@@ -37,11 +37,12 @@ const insertProductChart = () => {
 insertProductChart();
 
 /* ****************PeopleAlsoViewed************************ */
+let count = 0;
 
 function PAVFactory() {
   const pav = {};
 
-  pav.link_to_image = faker.image.imageUrl(140, 140, 'fashion');
+  pav.link_to_image = `https://s3-us-west-1.amazonaws.com/hreipavs/${count}.jpg`;
   pav.star_rating = faker.random.number({
     min: 0,
     max: 100,
@@ -58,6 +59,7 @@ function PAVFactory() {
 const pavArray = [];
 
 for (let i = 0; i < 100; i++) {
+  count = i + 1;
   pavArray.push(PAVFactory());
 }
 

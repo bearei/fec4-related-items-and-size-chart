@@ -25,7 +25,7 @@ class Ac extends React.Component {
 
   getSizeChart() {
     axios
-      .get(path.join("api", "sizechart"))
+      .get("api/sizechart")
       .then(response => {
         // console.log(response.data);
         this.setState({ chart: response.data });
@@ -35,7 +35,7 @@ class Ac extends React.Component {
 
   getPavs() {
     axios
-      .get(path.join("api", "pavs"))
+      .get("/api/pavs")
       .then(response => {
         // console.log(response.data);
         this.setState({ info: response.data });

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongoUri = 'mongodb://localhost/hrei-related-items-and-size-chart';
+const mongoUri = 'mongodb+srv://root:IloveCareyJRoselee@hrei-cluster-o4i6i.mongodb.net/products';
 const Product = require('./Product.js');
 const Pav = require('./Pav.js');
 

@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import axios from "axios";
 import SizeChart from "./components/SizeChart.jsx";
 import Pav from "./components/Pav.jsx";
+import path from "path";
 
 class Ac extends React.Component {
   constructor() {
@@ -24,7 +25,7 @@ class Ac extends React.Component {
 
   getSizeChart() {
     axios
-      .get("http://localhost:3002/api/sizechart")
+      .get(path.join("api", "sizechart"))
       .then(response => {
         // console.log(response.data);
         this.setState({ chart: response.data });
@@ -34,7 +35,7 @@ class Ac extends React.Component {
 
   getPavs() {
     axios
-      .get("http://localhost:3002/api/pavs")
+      .get(path.join("api", "pavs"))
       .then(response => {
         // console.log(response.data);
         this.setState({ info: response.data });

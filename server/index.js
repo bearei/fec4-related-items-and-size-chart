@@ -3,7 +3,7 @@ const path = require('path');
 const db = require('../database-mongodb/index.js');
 
 const app = express();
-const PORT = 3002;
+const PORT = 8081;
 
 
 app.use(express.static(path.join(__dirname, '../public')));

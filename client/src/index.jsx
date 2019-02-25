@@ -25,7 +25,9 @@ class Ac extends React.Component {
 
   getSizeChart() {
     axios
-      .get("api/sizechart")
+      .get(
+        "http://acsinglewidget-env.w3xxmjpej4.us-east-1.elasticbeanstalk.com/api/sizechart"
+      )
       .then(response => {
         // console.log(response.data);
         this.setState({ chart: response.data });
@@ -35,7 +37,9 @@ class Ac extends React.Component {
 
   getPavs() {
     axios
-      .get("/api/pavs")
+      .get(
+        "http://acsinglewidget-env.w3xxmjpej4.us-east-1.elasticbeanstalk.com/api/pavs"
+      )
       .then(response => {
         // console.log(response.data);
         this.setState({ info: response.data });

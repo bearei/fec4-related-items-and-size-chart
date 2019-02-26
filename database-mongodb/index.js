@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
+<<<<<<< HEAD
 const mongoUri = 'mongodb+srv://root:IloveCareyJRoselee@hrei-cluster-o4i6i.mongodb.net/hrei-related-items-and-size-chart';
+=======
+// const mongoUri = 'mongodb://localhost/hrei-related-items-and-size-chart'
+const mongoUri = 'mongodb+srv://root:IloveCareyJRoselee@hrei-cluster-o4i6i.mongodb.net/hrei-related-items-and-size-chart?retryWrites=true';
+>>>>>>> fb3274b6ecafa59bcc5112231835818853f99035
 const Product = require('./Product.js');
 const Pav = require('./Pav.js');
 

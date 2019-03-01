@@ -1,0 +1,8 @@
+GET /api/product_id
+POST /api/pav_id
+PUT /api/pav_id
+DELETE /api/pav_id
+
+Parameters    Type        Description
+  product_id  integer     Id of primary product
+  pav_id      integer     Id of the secondary product

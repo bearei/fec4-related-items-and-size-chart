@@ -12,13 +12,29 @@
     "build": "webpack --mode production",
     "react-dev": "webpack -d --watch",
     "db:setup": "node database-mongodb/seed.js",
-    "test": "jest"
+    "test": "jest",
+    "data": "node db/seeds/seedTest.js",
+    "seedDb": "knex seed:run",
+    "cassandra": "cqlsh --f db/schema.cql",
+    "connect": "node db/cassandra.js",
+    "csv": "node --max-old-space-size=8192 db/writingCSV.js",
+    "maria": "mysql -u root < db/connect.sql"
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "cassandra-driver": "^4.0.0",
+    "csv-write-stream": "^2.0.0",
+    "csv-writer": "^1.2.0",
     "express": "^4.16.4",
+    "express-cassandra": "^2.3.0",
     "faker": "^4.1.0",
-    "mongoose": "^5.4.10"
+    "fs": "0.0.1-security",
+    "json2csv": "^4.3.5",
+    "knex": "^0.16.3",
+    "mongoose": "^5.4.10",
+    "mysql": "^2.16.0",
+    "path": "^0.12.7",
+    "util": "^0.11.1"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",

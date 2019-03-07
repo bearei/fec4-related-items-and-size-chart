@@ -26,19 +26,21 @@ class Ac extends React.Component {
   getSizeChart() {
     axios
       .get(
-        "http://acsinglewidget-env.w3xxmjpej4.us-east-1.elasticbeanstalk.com/api/sizechart"
+        "/api/sizechart"
       )
       .then(response => {
-        // console.log(response.data);
+        console.log(response.data);
         this.setState({ chart: response.data });
       })
       .catch(err => console.log(err));
   }
 
   getPavs() {
+    let id = window.location.pathname.split('/')[1];
+
     axios
       .get(
-        "http://acsinglewidget-env.w3xxmjpej4.us-east-1.elasticbeanstalk.com/api/pavs"
+        `/api/pavs/${id}`
       )
       .then(response => {
         // console.log(response.data);

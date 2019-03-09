@@ -8,26 +8,22 @@ const bodyParts = ['Chest', 'Sleeve Length', 'Waist', 'Inseam'];
 const sizes = ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL'];
 
 // Data generation for primary records
-const createFakeProduct = (id) => ({
-  id: id,
+const createFakeProduct = () => ({
   product_name: faker.commerce.product(),
-  brand: faker.random.number({ min: 1, max: 100 })
 });
 
 for (var i = 0; i < 10; i++) {
   var fakeProducts = [];
 
   for (var j = 0; j < 1000000; j++) {
-    fakeProducts.push(createFakeProduct(i * 1000000 + j + 1));
+    fakeProducts.push(createFakeProduct());
   }
 
-  var pathway = path.join(__dirname, `./fakeProducts.csv`);
+  var pathway = path.join(__dirname, `./test.csv`);
   const csvWriter = createCsvWriter({
     path: pathway,
     header: [
-      {id: 'id', title: 'id'},
-      {id: 'product_name', title: 'product_name'},
-      {id: 'brand', title: 'brand'}
+      {id: 'product_name', title: 'product_name'}
     ],
     append:true
   });
@@ -39,38 +35,31 @@ for (var i = 0; i < 10; i++) {
 
 // Data generation for size charts 
 for (var i = 0; i < 1; i++) {
-  var count = 0;
   var fakeProducts = [];
   
-  for (var j = 0; j < 100; j++) {
     let aProd = {};
 
     bodyParts.forEach((elementP) => {
       sizes.forEach((elementS) => {
-        count++;
-        aProd.id = count;
+
         aProd.bodyPart = elementP;
         aProd.size = elementS;
         aProd.measurement = faker.random.number({
           min: 26,
           max: 52,
         });
-        aProd.brand_id = j + 1;
         fakeProducts.push(aProd);
         aProd = {};
       });
     });
-  }
   
-  var pathway = path.join(__dirname, `./fakeSizeChart.csv`);
+  var pathway = path.join(__dirname, `./test1.csv`);
   const csvWriter = createCsvWriter({
     path: pathway,
     header: [
-      {id: 'id', title: 'id'},
       {id: 'bodyPart', title: 'bodyPart'},
       {id: 'size', title: 'size'},
-      {id: 'measurement', title: 'measurement'},
-      {id: 'brand_id', title: 'brand_id'}
+      {id: 'measurement', title: 'measurement'}
     ],
     append:true
   });
@@ -81,31 +70,28 @@ for (var i = 0; i < 1; i++) {
 }
 
 // Data generation for the Products Also Viewed (PAV)
-const createFakePAV = (productId, id) => ({
-  id: id,
-  link_to_image: faker.image.fashion(),
+const createFakePAV = (productId, image) => ({
   star_rating: faker.random.number({ min: 0, max: 100 }),
   review_count: faker.random.number({ min: 1, max: 100 }),
   short_description: faker.commerce.productName(),
   price: faker.commerce.price(),
+  link_to_image: `https://s3-us-west-1.amazonaws.com/hreipavs/${image}.jpg`,
   product_id: productId
 });
-var count = 0;
-for (var v = 0; v < 4; v ++) {
+
+var image;
+for (var v = 0; v < 1; v ++) {
   for (var m = 0; m < 10 ; m++) {
     var fakePAVs = [];
-    for (var n = 0; n < 1000000; n++) {
-      // var variance = faker.random.number({ min: 2, max: 5});
-  
-      count += 1;
-      fakePAVs.push(createFakePAV((m * 1000000) + n + 1, count));
+    for (var n = 0; n < 10; n++) {
+      image = Math.floor(Math.random() * 100 + 1);
+      fakePAVs.push(createFakePAV((m * 10) + n + 1, image));
     }
   
-    var pathway = path.join(__dirname, `./fakePAVs${v}.csv`);
+    var pathway = path.join(__dirname, `./test${v}.csv`);
     const csvWriter = createCsvWriter({
       path: pathway,
       header: [
-          {id: 'id', title: 'id'},
           {id: 'link_to_image', title: 'link_to_image'},
           {id: 'star_rating', title: 'star_rating'},
           {id: 'review_count', title: 'review_count'},

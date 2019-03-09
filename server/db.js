@@ -3,8 +3,8 @@ var env = process.env.NODE_ENV || 'development';
 var knex = require('knex')(config[env]);
 
 const fetchChartFromDB = () => {
-    return knex('sizechart')
-        .where({brand_id: 1})
+    return knex('sizes')
+        .where({})
         .then(chart => {
             console.log(chart);
             return chart;
@@ -14,6 +14,7 @@ const fetchChartFromDB = () => {
 const postPAV = (details) => {
     return knex('pavs')
         .insert({
+            link_to_image: details.link_to_image,
             star_rating: details.star_rating,
             review_count: details.review_count,
             short_description: details.short_description,
@@ -40,6 +41,7 @@ const updatePAV = (id, newDets) => {
 const fetchFourRandomPAVsFromDB = (id) => {
     return knex('pavs')
         .where({product_id: id})
+        .limit(4)
         .then(pavs => {
             console.log(pavs);
             return pavs;
@@ -49,6 +51,5 @@ const fetchFourRandomPAVsFromDB = (id) => {
 module.exports.deletePAV = deletePAV;
 module.exports.updatePAV = updatePAV;
 module.exports.postPAV = postPAV;
-module.exports.fetchProduct = fetchProduct;
 module.exports.fetchChartFromDB = fetchChartFromDB;
 module.exports.fetchFourRandomPAVsFromDB = fetchFourRandomPAVsFromDB;

@@ -6,7 +6,6 @@ const fetchChartFromDB = () => {
     return knex('sizes')
         .where({})
         .then(chart => {
-            console.log(chart);
             return chart;
         });
 };
@@ -43,7 +42,6 @@ const fetchFourRandomPAVsFromDB = (id) => {
         .where({product_id: id})
         .limit(4)
         .then(pavs => {
-            console.log(pavs);
             return pavs;
         })
 };

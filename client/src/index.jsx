@@ -4,6 +4,7 @@ import axios from "axios";
 import SizeChart from "./components/SizeChart.jsx";
 import Pav from "./components/Pav.jsx";
 import path from "path";
+import './styles.css';
 
 class Ac extends React.Component {
   constructor() {
@@ -29,18 +30,17 @@ class Ac extends React.Component {
         "/api/sizechart"
       )
       .then(response => {
-        console.log(response.data);
         this.setState({ chart: response.data });
       })
       .catch(err => console.log(err));
   }
 
   getPavs() {
-    let id = window.location.pathname.split('/')[1];
+    let itemId = window.location.pathname.split('/')[1];
 
     axios
       .get(
-        `/api/pavs/${id}`
+        `/api/pavs/${itemId}`
       )
       .then(response => {
         // console.log(response.data);

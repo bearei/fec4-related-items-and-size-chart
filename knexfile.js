@@ -3,8 +3,7 @@ module.exports = {
         client: 'mysql',
         connection: {
             user: 'root',
-            // database: 'test',
-            database: 'testdb',
+            database: 'sdc',
         },
         migrations: {
             directory: __dirname + '/db/migrations'

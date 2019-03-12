@@ -16,7 +16,7 @@ for (var i = 0; i < 10; i++) {
     fakeProducts.push(createFakeProduct());
   }
 
-  var pathway = path.join(__dirname, `./csv/fakeProducts.csv`);
+  var pathway = path.join(__dirname, `./fakeProducts.csv`);
   const csvWriter = createCsvWriter({
     path: pathway,
     header: [
@@ -50,7 +50,7 @@ for (var i = 0; i < 1; i++) {
       });
     });
   
-  var pathway = path.join(__dirname, `./csv/fakeSizeChart.csv`);
+  var pathway = path.join(__dirname, `./fakeSizeChart.csv`);
   const csvWriter = createCsvWriter({
     path: pathway,
     header: [
@@ -85,7 +85,7 @@ for (var v = 0; v < 4; v ++) {
       fakePAVs.push(createFakePAV((m * 1000) + n + 1, image));
     }
   
-    var pathway = path.join(__dirname, `./csv/fakePAVs${v}.csv`);
+    var pathway = path.join(__dirname, `./fakePAVs${v}.csv`);
     const csvWriter = createCsvWriter({
       path: pathway,
       header: [

@@ -1,4 +1,4 @@
-require('newrelic');
+// require('newrelic');
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 8081;
 
 
-app.use('/:id', express.static(path.join(__dirname, '../public')));
+app.use('/:itemId', express.static(path.join(__dirname, '../public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -20,15 +20,15 @@ app.use((req, res, next) => {
   next();
 });
 
-app.delete('/delete/:id', (req, res) => {
-  db.deletePAV(req.params.id)
+app.delete('/delete/:itemId', (req, res) => {
+  db.deletePAV(req.params.itemId)
     .then(() => {
       res.end('deleted');
     });
 });
 
-app.put('/update/:id', (req, res) => {
-  db.deletePAV(req.params.id, req.body)
+app.put('/update/:itemId', (req, res) => {
+  db.deletePAV(req.params.itemId, req.body)
     .then(() => {
       res.end('updated');
     });
@@ -47,9 +47,8 @@ app.get('/api/sizechart', (req, res) => {
     .then(chart => res.send(chart));
 });
 
-app.get('/api/pavs/:id', (req, res) => {
-  console.log(req.params.id);
-  db.fetchFourRandomPAVsFromDB(req.params.id)
+app.get('/api/pavs/:itemId', (req, res) => {
+  db.fetchFourRandomPAVsFromDB(req.params.itemId)
     .then(pavs => res.send(pavs));
 });
 

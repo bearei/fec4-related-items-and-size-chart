@@ -1,8 +1,5 @@
-// const csvWriter = require('csv-write-stream');
-// const writer = csvWriter({sendHeaders: false});
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const path = require('path');
-const fs = require('fs');
 const faker = require('faker');
 const bodyParts = ['Chest', 'Sleeve Length', 'Waist', 'Inseam'];
 const sizes = ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL'];
@@ -15,11 +12,11 @@ const createFakeProduct = () => ({
 for (var i = 0; i < 10; i++) {
   var fakeProducts = [];
 
-  for (var j = 0; j < 1000000; j++) {
+  for (var j = 0; j < 100000; j++) {
     fakeProducts.push(createFakeProduct());
   }
 
-  var pathway = path.join(__dirname, `./test.csv`);
+  var pathway = path.join(__dirname, `./csv/fakeProducts.csv`);
   const csvWriter = createCsvWriter({
     path: pathway,
     header: [
@@ -53,7 +50,7 @@ for (var i = 0; i < 1; i++) {
       });
     });
   
-  var pathway = path.join(__dirname, `./test1.csv`);
+  var pathway = path.join(__dirname, `./csv/fakeSizeChart.csv`);
   const csvWriter = createCsvWriter({
     path: pathway,
     header: [
@@ -75,20 +72,20 @@ const createFakePAV = (productId, image) => ({
   review_count: faker.random.number({ min: 1, max: 100 }),
   short_description: faker.commerce.productName(),
   price: faker.commerce.price(),
-  link_to_image: `https://s3-us-west-1.amazonaws.com/hreipavs/${image}.jpg`,
+  link_to_image: `https://s3.us-east-2.amazonaws.com/sdc-beareipavs/${image}.jpg`,
   product_id: productId
 });
 
 var image;
-for (var v = 0; v < 1; v ++) {
+for (var v = 0; v < 4; v ++) {
   for (var m = 0; m < 10 ; m++) {
     var fakePAVs = [];
-    for (var n = 0; n < 10; n++) {
-      image = Math.floor(Math.random() * 100 + 1);
-      fakePAVs.push(createFakePAV((m * 10) + n + 1, image));
+    for (var n = 0; n < 100000; n++) {
+      image = Math.floor(Math.random() * 400 + 1);
+      fakePAVs.push(createFakePAV((m * 100000) + n + 1, image));
     }
   
-    var pathway = path.join(__dirname, `./test${v}.csv`);
+    var pathway = path.join(__dirname, `./csv/fakePAVs${v}.csv`);
     const csvWriter = createCsvWriter({
       path: pathway,
       header: [

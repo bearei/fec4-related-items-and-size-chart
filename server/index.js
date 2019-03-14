@@ -2,8 +2,9 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-const db = require('./db.js');
+const proxy = require('http-proxy-middleware');
 const app = express();
+
 // const redis = require('redis');
 // const client = redis.createClient();
 
@@ -20,37 +21,74 @@ app.use((req, res, next) => {
   next();
 });
 
-app.delete('/delete/:itemId', (req, res) => {
-  db.deletePAV(req.params.itemId)
-    .then(() => {
-      res.end('deleted');
-    });
-});
+app.use(
+  '/api/sizechart',
+  proxy({
+    target: '18.224.184.136:3008',
+    changeOrigin: true
+  })
+);
+app.use(
+  '/api/pavs/:itemId',
+  proxy({
+    target: '18.224.184.136:3008',
+    changeOrigin: true
+  })
+)
+app.use(
+  '/post',
+  proxy({
+    target: '18.224.184.136:3008',
+    changeOrigin: true
+  })
+)
 
-app.put('/update/:itemId', (req, res) => {
-  db.deletePAV(req.params.itemId, req.body)
-    .then(() => {
-      res.end('updated');
-    });
-});
+app.use(
+  '/delete/:itemId',
+  proxy({
+    target: '18.224.184.136:3008',
+    changeOrigin: true
+  })
+)
+app.use(
+  '/update/:itemId',
+  proxy({
+    target: '18.224.184.136:3008',
+    changeOrigin: true
+  })
+)
 
-app.post('/post', (req, res) => {
-  db.postPAV(req.body)
-    .then(() => {
-      res.end('posted');
-    })
-});
+// app.delete('/delete/:itemId', (req, res) => {
+//   db.deletePAV(req.params.itemId)
+//     .then(() => {
+//       res.end('deleted');
+//     });
+// });
+
+// app.put('/update/:itemId', (req, res) => {
+//   db.deletePAV(req.params.itemId, req.body)
+//     .then(() => {
+//       res.end('updated');
+//     });
+// });
+
+// app.post('/post', (req, res) => {
+//   db.postPAV(req.body)
+//     .then(() => {
+//       res.end('posted');
+//     })
+// });
 
 
-app.get('/api/sizechart', (req, res) => {
-  db.fetchChartFromDB()
-    .then(chart => res.send(chart));
-});
+// app.get('/api/sizechart', (req, res) => {
+//   db.fetchChartFromDB()
+//     .then(chart => res.send(chart));
+// });
 
-app.get('/api/pavs/:itemId', (req, res) => {
-  db.fetchFourRandomPAVsFromDB(req.params.itemId)
-    .then(pavs => res.send(pavs));
-});
+// app.get('/api/pavs/:itemId', (req, res) => {
+//   db.fetchFourRandomPAVsFromDB(req.params.itemId)
+//     .then(pavs => res.send(pavs));
+// });
 
 // client.on('error', function(err) {
 //   console.log('error' + err);

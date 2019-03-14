@@ -10,8 +10,8 @@ const app = express();
 
 const PORT = process.env.PORT || 3010;
 
-// app.use('/:itemId', express.static(path.join(__dirname, '../public')));
-app.use('/', express.static(path.join(__dirname, '../loader')));
+app.use('/:itemId', express.static(path.join(__dirname, '../public')));
+app.use('/loaderio-5290770c70fa7b812a8d57efdf71a005.html/', express.static(path.join(__dirname, '../loader')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 

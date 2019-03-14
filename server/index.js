@@ -8,7 +8,7 @@ const app = express();
 // const redis = require('redis');
 // const client = redis.createClient();
 
-const PORT = 3010;
+const PORT = process.env.PORT || 3010;
 
 
 app.use('/:itemId', express.static(path.join(__dirname, '../public')));
@@ -24,21 +24,21 @@ app.use((req, res, next) => {
 app.use(
   '/api/sizechart',
   proxy({
-    target: '18.224.184.136:3008',
+    target: 'http://18.224.184.136:3008',
     changeOrigin: true
   })
 );
 app.use(
   '/api/pavs/:itemId',
   proxy({
-    target: '18.224.184.136:3008',
+    target: 'http://18.224.184.136:3008',
     changeOrigin: true
   })
 )
 app.use(
   '/post',
   proxy({
-    target: '18.224.184.136:3008',
+    target: 'http://18.224.184.136:3008',
     changeOrigin: true
   })
 )
@@ -46,14 +46,14 @@ app.use(
 app.use(
   '/delete/:itemId',
   proxy({
-    target: '18.224.184.136:3008',
+    target: 'http://18.224.184.136:3008',
     changeOrigin: true
   })
 )
 app.use(
   '/update/:itemId',
   proxy({
-    target: '18.224.184.136:3008',
+    target: 'http://18.224.184.136:3008',
     changeOrigin: true
   })
 )

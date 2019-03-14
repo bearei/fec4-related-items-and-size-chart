@@ -10,10 +10,7 @@
   "scripts": {
     "start": "node server/index.js",
     "build": "webpack --mode production",
-    "react-dev": "webpack -d --watch",
-    "csv": "node --max-old-space-size=8192 db/writingCSV.js",
-    "maria": "mysql -u root < db/connect.sql",
-    "fire": "artillery run hello.yml"
+    "react-dev": "webpack -d --watch"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -22,8 +19,8 @@
     "csv-writer": "^1.2.0",
     "express": "^4.16.4",
     "faker": "^4.1.0",
+    "http-proxy-middleware": "^0.19.1",
     "knex": "^0.16.3",
-    "mongoose": "^5.4.10",
     "mysql": "^2.16.0",
     "newrelic": "^5.6.0",
     "path": "^0.12.7",

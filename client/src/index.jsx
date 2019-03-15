@@ -36,7 +36,7 @@ class Ac extends React.Component {
   }
 
   getPavs() {
-    let itemId = window.location.pathname.split('/')[1];
+    let itemId = window.location.pathname.split('/')[2];
 
     axios
       .get(

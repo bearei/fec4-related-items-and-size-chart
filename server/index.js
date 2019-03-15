@@ -10,7 +10,7 @@ const app = express();
 
 const PORT = process.env.PORT || 3010;
 
-app.use('/:itemId', express.static(path.join(__dirname, '../public')));
+app.use('/shopping/:itemId', express.static(path.join(__dirname, '../public')));
 app.use('/', express.static(path.join(__dirname, '../loader')));
 
 app.use((req, res, next) => {
